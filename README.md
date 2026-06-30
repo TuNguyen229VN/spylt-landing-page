@@ -1,0 +1,1 @@
+reactjs 19, vite,tailwindcss, gsap, react-responsive
