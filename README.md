@@ -30,18 +30,18 @@ The landing page showcases a fictional beverage brand with cinematic storytellin
 
 # Project Structure
 
-```
+```bash
 public/
 ├── fonts/         # Custom fonts
 ├── images/        # Static images
 └── videos/        # Static videos
 
-```
-src
-├── components     # Reusable UI components
-├── constants      # Static data
-├── sections       # Landing page sections (Hero, Benefit, etc.)
+src/
+├── components/    # Reusable UI components
+├── sections/      # Landing page sections (Hero, Footer, etc.)
+├── constants/     # Static data
 └── App.jsx        # Main entry
+```
 ---
 
 # Pages
