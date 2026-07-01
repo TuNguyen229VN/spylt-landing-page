@@ -1,8 +1,16 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
+import { useMediaQuery } from "react-responsive";
 
 const HeroSection = () => {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 768px)",
+    });
+
+    const isTablet = useMediaQuery({
+        query: "(max-width: 1024px)",
+    });
 
     useGSAP(() => {
         const titleSplit = SplitText.create(".hero-title", {
@@ -47,7 +55,28 @@ const HeroSection = () => {
     return (
         <section className="bg-main-bg">
             <div className="hero-container">
-                <img src="/images/hero-img.png" alt="hero" className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto scale-100 md:scale-150" />
+                {isTablet ? (
+                    <>
+                        {isMobile && (
+                            <img
+                                src="/images/hero-bg.png"
+                                className="absolute bottom-40 size-full object-cover"
+                            />
+                        )}
+                        <img
+                            src="/images/hero-img.png"
+                            className="absolute bottom-0 left-1/2 -translate-x-1/2 object-auto"
+                        />
+                    </>
+                ) : (
+                    <video
+                        src="/videos/hero-bg.mp4"
+                        autoPlay
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                )}
                 <div className="hero-content opacity-0">
                     <div className="overflow-hidden">
                         <h1 className="hero-title">Freaking Delicious</h1>
@@ -55,7 +84,7 @@ const HeroSection = () => {
                     <div style={{
                         clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
                     }} className="hero-text-scroll">
-                        <div>
+                        <div className="hero-subtitle">
                             <h1>Protein + Caffeine</h1>
                         </div>
                     </div>
