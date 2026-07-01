@@ -31,13 +31,17 @@ The landing page showcases a fictional beverage brand with cinematic storytellin
 # Project Structure
 
 ```
-src
-├── components
-├── constants
-├── sections
-└── App.jsx
-```
+public/
+├── fonts/         # Custom fonts
+├── images/        # Static images
+└── videos/        # Static videos
 
+```
+src
+├── components     # Reusable UI components
+├── constants      # Static data
+├── sections       # Landing page sections (Hero, Benefit, etc.)
+└── App.jsx        # Main entry
 ---
 
 # Pages
